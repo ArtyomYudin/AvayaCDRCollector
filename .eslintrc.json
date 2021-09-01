@@ -1,0 +1,94 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    // "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/recommended",
+    // "plugin:import/typescript"
+    "plugin:prettier/recommended",
+    "prettier"
+    //"prettier/@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+      //"node": { "extensions": [".js", ".jsx", ".ts", ".tsx", ".component.ts"] }
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "createDefaultProgram": true,
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "rules": {
+    // "indent": ["error", 4],
+    "prettier/prettier": ["error"],
+    "import/prefer-default-export": "off",
+    "import/extensions": ["error", { "ts": "never", "js": "never" }],
+    "import/no-unresolved": "off",
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": ["error"],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-object-literal-type-assertion": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": true
+        }
+      }
+    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "log",
+          "warn",
+          "dir",
+          "timeLog",
+          "assert",
+          "clear",
+          "count",
+          "countReset",
+          "group",
+          "groupEnd",
+          "table",
+          "dirxml",
+          "error",
+          "groupCollapsed",
+          "Console",
+          "profile",
+          "profileEnd",
+          "timeStamp",
+          "context"
+        ]
+      }
+    ],
+    "no-debugger": "error",
+    "max-len": [
+      "error",
+      {
+        "code": 140,
+        "ignoreComments": true,
+        "tabWidth": 4
+      }
+    ]
+  }
+}

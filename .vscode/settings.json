@@ -1,0 +1,34 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+
+  // "eslint.validate": [ "javascript", "typescript", "html"],
+  "eslint.validate": ["javascript", "typescript"],
+  // "eslint.workingDirectories": ["./backend", "./frontend"],
+
+  "eslint.options": {
+    "extensions": [".js", ".ts", "html"]
+  },
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "files.eol": "\n",
+
+  "files.exclude": {
+    "**/node_modules/": true,
+    "**/tsconfig.app.json": true,
+    "**/tsconfig.spec.json": true,
+    "**/.editorconfig": true,
+    "**/.browserslistrc": true
+  },
+
+  "workbench.tree.indent": 24,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#008070"
+  }
+}
