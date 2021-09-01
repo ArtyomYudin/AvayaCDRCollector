@@ -10,7 +10,7 @@ lib
 
 # dependencies
 node_modules
-.env
+#.env
 
 # profiling files
 chrome-profiler-events*.json
