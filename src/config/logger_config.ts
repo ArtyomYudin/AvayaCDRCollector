@@ -36,7 +36,7 @@ const myFormat = printf(info => `${info.timestamp} ${info.level}: ${JSON.stringi
 export const logger = createLogger({
   format: combine(timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), myFormat),
   transports: [
-    // new transports.File(options.file_error),
+    new transports.File(options.file_error),
     new transports.File(options.file_info),
     // new winston.transports.Console(options.console),
   ],
@@ -46,5 +46,3 @@ export const logger = createLogger({
 logger.on('error', err => {
   console.log('Error in logger occured:', err.stack);
 });
-
-// module.exports = logger;
