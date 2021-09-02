@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "name": "AvayaCDRCollector",
+      "cwd": "/usr/local/node/avayacdrcollector/",
+      "script": "./lib/index.js",
+      "exec_mode": "fork",
+      "combine_logs": true,
+      "merge_logs": true,
+      "error_file": "/var/log/avayacdrcollector-err.log",
+      "out_file": "/dev/null",
+      "pid_file": "/var/run/avayacdrcollector.pid",
+      "log_date_format": "MMM DD HH:mm:ss",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

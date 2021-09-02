@@ -12,7 +12,7 @@ const options = {
     // maxFiles: 5,
     // colorize: false,
   },
-
+  /*
   file_error: {
     level: 'error',
     filename: '/var/log/avayacdrcollector-error.log',
@@ -22,7 +22,7 @@ const options = {
     // maxFiles: 5,
     // colorize: false,
   },
-
+*/
   console: {
     level: 'debug',
     handleExceptions: true,
@@ -36,7 +36,7 @@ const myFormat = printf(info => `${info.timestamp} ${info.level}: ${JSON.stringi
 export const logger = createLogger({
   format: combine(timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), myFormat),
   transports: [
-    new transports.File(options.file_error),
+    // new transports.File(options.file_error),
     new transports.File(options.file_info),
     // new winston.transports.Console(options.console),
   ],

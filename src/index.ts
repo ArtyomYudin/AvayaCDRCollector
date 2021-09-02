@@ -8,10 +8,10 @@ const server = net.createServer(socket => {
   socket.setEncoding('binary');
   // socket.setKeepAlive(true);
 
-  logger.info('client connected');
+  logger.info('Client connected');
 
   socket.on('end', () => {
-    logger.info('client disconnected');
+    logger.info('Client disconnected');
   });
   socket.on('data', chunk => {
     socketParseMessage(dbPool, chunk);
@@ -20,6 +20,6 @@ const server = net.createServer(socket => {
 server.on('error', (err: any) => {
   throw err;
 });
-server.listen({ port: process.env.NET_SOCKET_PORT }, () => {
-  logger.info(`Avaya collector server started on port ${process.env.NET_SOCKET_PORT}`);
+server.listen({ host: process.env.NET_SOCKET_ADDR, port: process.env.NET_SOCKET_PORT }, () => {
+  logger.info(`Avaya collector server started on ${process.env.NET_SOCKET_ADDR}:${process.env.NET_SOCKET_PORT}`);
 });
