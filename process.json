@@ -1,22 +1,18 @@
 {
   "apps": [
     {
-      "name": "AvayaCDRCollector",
-      "cwd": "/usr/local/node/avayacdrcollector/",
-      "script": "./lib/index.js",
+      "name": "Avaya CDR Collector",
+      "cwd": "/storage/development/avaya-cdr-collector",
+      "script": "./index.js",
       "exec_mode": "fork",
-      "combine_logs": true,
-      "merge_logs": true,
-      "error_file": "/var/log/avayacdrcollector-err.log",
-      "out_file": "/dev/null",
-      "pid_file": "/var/run/avayacdrcollector.pid",
-      "log_date_format": "MMM DD HH:mm:ss",
-      "watch": false,
+      "pid_file": "/var/run/avatacdr.pid",
       "env": {
+        "watch": false,
         "NODE_ENV": "development"
       },
       "env_production": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "watch": false
       }
     }
   ]
